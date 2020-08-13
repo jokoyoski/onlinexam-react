@@ -17,9 +17,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "preserve",
+    "experimentalDecorators":true
   },
   "include": [
-    "src"
+    "src", "src/index.tsx", "typings-custom",
+    ".typings-custom/**/*.ts"
   ]
 }

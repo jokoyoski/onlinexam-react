@@ -23,9 +23,40 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.home-menu {
+  background-image: url(./assets/newtisa1.jpg) !important ;
+  height: 130vh;
+}
 
 .App-link {
   color: #61dafb;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+.flex-card {
+  display: flex;
+  margin-left: 1em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 7em;
+  padding-top: 2em;
+}
+.flex-box {
+  margin-right: 3%;
+  width: 30%;
+}
+@media screen and (max-width:480px){
+  .flex-card{
+    flex-direction: column;
+  }
+  .flex-box {
+    margin: 10px;
+    width: 90% !important;
+  }
 }
 
 @keyframes App-logo-spin {
