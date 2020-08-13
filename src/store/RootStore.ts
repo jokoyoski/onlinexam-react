@@ -1,7 +1,9 @@
 import AppStore from "./AppStore";
 import UserStore from "./UserStore";
 import { createContext } from "react";
+import { configure } from "mobx";
 
+configure({enforceActions:'always'});
 export class RootStore{
 
     appStore:AppStore;
