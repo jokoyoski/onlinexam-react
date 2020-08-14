@@ -24,7 +24,7 @@ export const MainPage: React.FC<ChildrenDetails> = ({ children }) => {
        
        
       </div>
-      <div style={{ height: "120vh" }}>
+      <div style={{ height: "100%" }}>
           <Grid>
               
           </Grid>
@@ -38,7 +38,7 @@ export const MainPage: React.FC<ChildrenDetails> = ({ children }) => {
             visible
             width="thin"
           >
-            <Menu.Item as="a">
+            <Menu.Item as={NavLink} exact to="/category">
               <Icon name="home" />
               Home
             </Menu.Item>
@@ -53,7 +53,7 @@ export const MainPage: React.FC<ChildrenDetails> = ({ children }) => {
           </Sidebar>
 
           <Sidebar.Pusher>
-               <div style={{marginLeft:'155px'}}>
+               <div style={{marginLeft:'155px',minHeight:'100vh'}}>
                {children}
               
                </div>

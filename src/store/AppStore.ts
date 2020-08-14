@@ -1,11 +1,9 @@
-import {observable,action} from 'mobx';
-import { createContext } from 'react';
-
+import {observable,action, configure} from 'mobx';
 import agent from '../api/agent';
 import { RegisterUser } from '../model/RegisterUser';
 import { toast } from 'react-toastify';
 import { RootStore } from './RootStore';
-
+configure({enforceActions:'always'});
 export default class AppStore{
   rootStore:RootStore;
   constructor(rootStore:RootStore){

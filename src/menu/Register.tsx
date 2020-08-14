@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Grid, Form, Button, Segment} from "semantic-ui-react";
 import { observer } from "mobx-react-lite";
-import AppStore from "../store/AppStore";
 import {RegisterUser} from '../model/RegisterUser';
 import {Form as FinalForm,Field} from 'react-final-form';
 import  TextInput  from "../common/TextInput";
@@ -51,8 +50,8 @@ export const Register = () => {
   
   
   const handleFinalFormSubmit = (values:RegisterUser) => {
-   values.dateOfBirth=value;
-   appStore.registerUser(values).then().catch((error)=>console.log(error.response))
+  values.dateOfBirth=value;
+  appStore.registerUser(values).then().catch((error)=>console.log(error.response))
 
   };
 

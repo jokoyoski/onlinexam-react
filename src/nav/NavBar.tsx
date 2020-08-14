@@ -1,28 +1,80 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Menu, Container } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, RouteComponentProps } from "react-router-dom";
+import { RootStoreContext } from "../store/RootStore";
+import { observer } from "mobx-react-lite";
 
-export const NavBar = () => {
-    const [isLoggedIn,setIsLoggedIn ]=React.useState(true)
+ const NavBar= () => {
+  const store = useContext(RootStoreContext);
+  const { userStore, appStore ,commonStore} = store;
+
+ 
   return (
 
     <Menu fixed="top" inverted>
-      <Container>
+      <div style={{width:'100%'}}>
+        <div style={{ width:'100%', display:'flex' ,flexDirection:'row',justifyContent:'space-between'}}>
+         <div style={{display:'flex'}}>
+         <div style={{marginLeft:'0%'}}>
         <Menu.Item as={NavLink} exact to="/" header>
-          {" "}
-          <img style={{ marginRight: "10px" }} alt="logo" src="oe.jpg" />
-          TISA
-        </Menu.Item>
-        {isLoggedIn &&<><Menu.Item  name="About Us" />
-        <Menu.Item name="Contact Us" />
+        
+        <img style={{ marginRight: "10%" }} alt="logo" src="oe.jpg" />
+        TISA
+      </Menu.Item>
+        </div>
+       
+        <div>
         <Menu.Item
           as={NavLink}
           exact
           to="/register"
           position="right"
-          name="Join US"
-        /></>}
-      </Container>
+          name="About us"
+        />
+        </div>
+
+         </div>
+
+
+
+         <div style={{flexDirection:'row',display:'flex'}}>
+        
+           {userStore.isLoggedIn &&
+ <div>
+<Menu.Item
+onClick={userStore.logout}
+ position="right"
+ name="Log out"
+/>
+</div>
+
+           }
+       
+        {!userStore.isLoggedIn &&
+ <div>
+ <Menu.Item
+   as={NavLink}
+   exact
+   to="/register"
+   position="right"
+   name="Join US"
+ />
+ </div>
+
+        }
+       
+         </div>
+      
+       
+        </div>
+       
+
+
+
+        
+       
+      </div>
     </Menu>
   );
 };
+export default observer(NavBar);
