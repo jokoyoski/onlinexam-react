@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { Menu, Container } from "semantic-ui-react";
-import { NavLink, RouteComponentProps } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 import { RootStoreContext } from "../store/RootStore";
 import { observer } from "mobx-react-lite";
 
  const NavBar= () => {
   const store = useContext(RootStoreContext);
-  const { userStore, appStore ,commonStore} = store;
+  const { userStore} = store;
 
  
   return (

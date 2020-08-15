@@ -42,7 +42,7 @@ export const MainPage: React.FC<ChildrenDetails> = ({ children }) => {
               <Icon name="home" />
               Home
             </Menu.Item>
-            <Menu.Item as={NavLink} exact to="/trials">
+            <Menu.Item as={NavLink} exact to="/question">
               <Icon name="book" />
               Do Test
             </Menu.Item>

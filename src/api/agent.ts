@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from "axios";
 import { RegisterUser } from "../model/RegisterUser";
-import { toast } from "react-toastify";
 import { LoginUser } from "../model/LoginUser";
 
 //axios.defaults.baseURL = "http://localhost:5000/api/";
@@ -43,8 +42,9 @@ const Activities = {
     requests.post("/account/register", userInfo),
   login: (userInfo: LoginUser) => requests.post("/account/login", userInfo),
   getCategory: () => requests.get("question"),
+  getQuestion: (categoryId:number,userId:number) => requests.get("question/72/1"),
 
-  //
+  
 };
 
 export default {

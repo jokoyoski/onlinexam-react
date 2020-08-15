@@ -12,7 +12,7 @@ export default class AppStore{
     @observable register: RegisterUser|undefined;
     @observable submitting:boolean=false;
     @observable loading:boolean=false;
-
+   
    
     
    

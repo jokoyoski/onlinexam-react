@@ -1,5 +1,5 @@
 import { User } from "../model/User";
-import { observable, computed, action, configure, runInAction } from "mobx";
+import { observable, action, configure, runInAction } from "mobx";
 import { LoginUser } from "../model/LoginUser";
 import agent from "../api/agent";
 import { RootStore } from "./RootStore";

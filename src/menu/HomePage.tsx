@@ -8,7 +8,7 @@ import { combineValidators, isRequired } from "revalidate";
 import { RouteComponentProps } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 
- const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
+const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
   const validators = combineValidators({
     username: isRequired({ message: "email is required" }),
     password: isRequired({ message: "password is required" }),
@@ -18,12 +18,12 @@ import { observer } from "mobx-react-lite";
     console.log(values);
     userStore
       .login(values)
-      .then((value) => (history.push('/category')))
+      .then((value) => history.push("/category"))
       .catch((error) => console.log(error));
   };
   const store = useContext(RootStoreContext);
   const { userStore, appStore } = store;
-  const [userInfo, setUserInfo] = useState<LoginUser>({
+  const [userInfo] = useState<LoginUser>({
     username: "",
     password: "",
   });
@@ -33,10 +33,10 @@ import { observer } from "mobx-react-lite";
         <Grid columns="sixteen" centered>
           <div style={{ paddingTop: "3em" }}>
             <Image src="pp.png" size="medium" rounded />
-            <div style={{paddingTop:'0em'}}>
-            <h2>ONLINE PREP CENTER</h2>
+            <div style={{ paddingTop: "0em" }}>
+              <h1>ONLINE PREP CENTER</h1>
             </div>
-            
+
             <FinalForm
               validate={validators}
               onSubmit={handleFinalFormSubmit}
